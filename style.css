@@ -2,15 +2,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-
-
 /* ===================themed variables ======================= */
 
 @media (prefers-color-scheme: light) {
   body {
-    --bg-color: #e2eaf3; 
-    --second-bg-color: #ccdce9; 
-    --text-color: #1f255e; 
+    --bg-color: #e2eaf3;
+    --second-bg-color: #ccdce9;
+    --text-color: #1f255e;
     --main-color: #2f73fe;
   }
 
@@ -19,14 +17,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
 @media (prefers-color-scheme: dark) {
   body {
     --bg-color: #1f242d;
@@ -34,19 +24,23 @@
     --text-color: #fff;
     --main-color: #0ef;
   }
-} 
-
-.floating {
-  position: absolute;
-  top: 100px;
-  right: 100px;
-padding: 5px 10px;
 }
 
+.floating {
+  position: fixed;
+  top: 85vh;
+  right: 5vw;
+  z-index: 999;
+  padding: 0 15px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color);
+  
+}
 
-
-
-
+.themeIcon {
+  font-size: 4em;
+}
 
 /* ==================== end of themed variables===================== */
 
@@ -506,6 +500,16 @@ span {
   .footer {
     padding: 2rem 3%;
   }
+
+  .floating {
+    
+ 
+  }
+.themeIcon {
+  font-size: 4rem;
+}
+
+
 }
 
 @media (max-width: 768px) {
@@ -630,9 +634,9 @@ span {
 /*  theme checkbox */
 
 body.lighttheme {
-  --bg-color: #e2eaf3; 
-  --second-bg-color: #ccdce9; 
-  --text-color: #1f255e; 
+  --bg-color: #e2eaf3;
+  --second-bg-color: #ccdce9;
+  --text-color: #1f255e;
   --main-color: #2f73fe;
 }
 
