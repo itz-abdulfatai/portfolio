@@ -28,8 +28,8 @@
 
 .floating {
   position: fixed;
-  top: 85vh;
-  right: 5vw;
+  bottom: 30px;
+  right: 10px;
   z-index: 999;
   padding: 0 15px;
   cursor: pointer;
