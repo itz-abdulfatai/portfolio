@@ -245,12 +245,51 @@ p.nsvp {
 }
 
 
-section.intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+
+
+.intro h2 {
+  text-align: center;
 }
+
+.intro .material-symbols-outlined {
+  font-size: 10rem;
+}
+
+.intro-inner {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.intro-inner > * {
+  flex-basis: 50%;
+  height: 260px;
+  /* margin-bottom: 10%; */
+  
+  
+}
+
+.icon-div, .process-div {
+  text-align: center;
+}
+
+.process-inner {
+  text-align: left;
+}
+
+.process-inner h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--main-color);
+}
+
+.process-inner .process-talk {
+  font-size: 1.4rem;
+
+}
+
 
 div.about {
     display: flex;
@@ -258,7 +297,10 @@ div.about {
     justify-content: space-around;
     align-items: center;
 }
-
+#about {
+  background: var(--second-bg-color);
+  padding-bottom: 80px;
+}
 h2 {
     font-size: 3rem;
     color: var(--main-color);
@@ -352,6 +394,9 @@ width: 80%;
           display: flex;
           align-items: baseline;
         }
+
+
+
         
         /* border, padding, margin, width */
         #fs-frm input,
@@ -363,6 +408,13 @@ width: 80%;
           padding: .75em 1rem;
           margin-bottom: 1.5rem;
         }
+
+        #fs-frm textarea {
+          resize: none;
+        }
+
+
+
         #fs-frm input:focus,
         #fs-frm select:focus,
         #fs-frm textarea:focus {
@@ -385,7 +437,9 @@ width: 80%;
           -webkit-appearance: button;
           -moz-appearance: button;
           appearance: button;
+          color: var(--main-color);
           transition: transform .5s ease;
+          margin: 0 auto;
         }
 
         #fs-frm [type="button"]:hover,
@@ -414,6 +468,71 @@ transform: scale(1.05);
 /* form template style end */
 
 
+section.little {
+  max-height: 40vh;
+  min-height: 40vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.little i , .little span{
+  font-size: 10rem;
+  color: #0ef;
+  transition: color .5s ease;
+  
+}
+
+.little i:hover, .little span:hover {
+  color: #a0f9ff;
+  
+}
+
+
+
+.little > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.little p  {
+  font-size: 1.5rem;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  background: var(--second-bg-color);
+}
+.footer-text p {
+  font-size: 1.6rem;
+}
+
+.footer-icontop a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  background: var(--main-color);
+  border-radius: 0.8rem;
+  transition: 0.5s ease;
+}
+
+.footer-icontop a i {
+  font-size: 2.4rem;
+  color: var(--second-bg-color);
+}
+
+.footer-icontop a:hover {
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+
+
 @media print {
   body {
     display: none;
@@ -426,21 +545,232 @@ transform: scale(1.05);
   }
 }
 
-/*  theme checkbox */
+/* media queries */
 
-body.lighttheme {
-  --bg-color: #e2eaf3;
-  --second-bg-color: #ccdce9;
-  --text-color: #1f255e;
-  --main-color: #2f73fe;
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+
+  .home-img img,
+  .about-img img {
+    width: 60vw;
+  }
 }
 
-body.darktheme {
-  --bg-color: #1f242d;
-  --second-bg-color: #323946;
-  --text-color: #fff;
-  --main-color: #0ef;
+@media (max-width: 991px) {
+
+
+  p.nsvp {
+    font-size: 4rem;
+  }
+
+.hero {
+  background: url(images/home-tab.jpg);
+  min-height: 80vh;
+
+
 }
+
+
+  .header {
+    padding: 2rem 3%;
+  }
+  section {
+    padding: 10rem 3% 2rem;
+  }
+  .services,
+  .portfolio {
+    padding-bottom: 7rem;
+  }
+
+  .contact {
+    min-height: auto;
+  }
+
+  .footer {
+    padding: 2rem 3%;
+  }
+
+
+.themeIcon {
+  font-size: 5rem;
+}
+
+
+}
+
+@media (max-width: 768px) {
+
+
+
+
+  .cta {
+    margin-top: 30px;
+  }
+  
+  .cta button {
+    font-size: 2rem;
+    padding: 10px 40px;
+    border-radius: 50px;
+    /* transition: transform 3s ease-in; */
+    animation: glow 3s ease infinite;
+    color: var(--text-color);
+  }
+
+
+
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: 1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5 1rem rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .home {
+    flex-direction: column;
+  }
+
+  .home-content h3 {
+    font-size: 2.6rem;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+
+  .services h2 {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio h2 {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .little i , .little span{
+    font-size: 7rem;
+    
+  }
+
+}
+
+@media (max-width: 617px) {
+
+  p.nsvp {
+    font-size: 3rem;
+  }
+
+
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .little i , .little span{
+    font-size: 5rem;
+    
+  }
+
+  section.little {
+    flex-wrap: wrap;
+    min-height: fit-content;
+    max-height: max-content;
+  
+  }
+
+  .little > div {
+    flex-basis: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .little i , .little span{
+    font-size: 7rem;
+    
+    
+  }
+
+
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .contact form .input-box input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 365px) {
+
+  .hero {
+    background: url(images/home-mobile.jpg);
+    min-height: 60hv;
+  
+  }
+
+  .home-img img,
+  .about-img img {
+    width: 130vw;
+  }
+  .try1 {
+    top: -101px;
+    left: -85px;
+  }
+
+  .try2 {
+    top: -90px;
+    left: -159px;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer p {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+
 
 
 
