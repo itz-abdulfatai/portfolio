@@ -185,7 +185,7 @@ p.nsvp {
   margin-top: 80px;
 }
 
-.cta button {
+.cta a {
   background: var(--main-color);
   font-size: 3rem;
   padding: 15px 50px;
@@ -194,7 +194,7 @@ p.nsvp {
   animation: glow 3s ease infinite;
   color: var(--text-color);
 }
-.cta button:hover {
+.cta a:hover {
     transform: scale(1.12);
     animation: none;
     box-shadow: 2px 2px 1rem var(--bg-color);
@@ -203,7 +203,14 @@ p.nsvp {
 
 }
 
-.cta button:active {
+
+.header.sticky {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+
+
+.cta a:active {
     background: none;
 }
 
@@ -446,6 +453,7 @@ width: 80%;
         #fs-frm [type="submit"]:hover,
         #fs-frm [type="reset"]:hover {
 transform: scale(1.05);
+box-shadow: 0 0 .2rem var(--main-color);
         }
 
 
@@ -484,6 +492,7 @@ section.little {
 
 .little i:hover, .little span:hover {
   color: #a0f9ff;
+  text-shadow: 0 0 .5rem #a0f9ff;
   
 }
 
@@ -543,6 +552,28 @@ section.little {
     font-size: 7rem;
     color: red;
   }
+}
+
+
+.social-links {
+  margin-top: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a i {
+  font-size: 4rem;
+  color: var(--text-color);
+  transition: color .5s ease;
+
+
+}
+
+.social-links a i:hover {
+  color: var(--main-color);
+  text-shadow: 0 0 1rem var(--main-color);
 }
 
 /* media queries */
@@ -610,7 +641,7 @@ section.little {
     margin-top: 30px;
   }
   
-  .cta button {
+  .cta a {
     font-size: 2rem;
     padding: 10px 40px;
     border-radius: 50px;
@@ -741,7 +772,7 @@ section.little {
 @media (max-width: 365px) {
 
   .hero {
-    background: url(images/home-mobile.jpg);
+    /* background: url(images/home-mobile.jpg); */
     min-height: 60hv;
   
   }
