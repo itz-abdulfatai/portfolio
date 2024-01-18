@@ -17,3 +17,30 @@ window.onscroll = () => {
   menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
 };
+
+
+ScrollReveal({
+  // reset: true,
+  distance: "50px",
+  duration: 1500,
+  delay: 200,
+});
+
+ScrollReveal().reveal(".nsvp", { origin: "bottom" });
+
+
+ScrollReveal().reveal(
+  ".other-counters, .finger-lift",
+  { origin: "left" }
+);
+
+ScrollReveal().reveal(".secondcounter", { origin: "right" });
+
+
+
+ScrollReveal().reveal(".contact-form", { origin: "bottom" });
+
+
+// const nameInput = document.querySelector("#full-name");
+
+// nameInput.setCustomValidity("kindly input full name (3 letters min)");
