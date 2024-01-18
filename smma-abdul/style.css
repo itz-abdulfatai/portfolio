@@ -5,11 +5,12 @@
 /* ===================themed variables ======================= */
 
 body {
-  --bg-color: #1f242d;
-  --second-bg-color: #323946;
+  --bg-color: #13192b;
+  --second-bg-color: #222d42;
   --text-color: #fff;
-  --main-color: #0ef;
-  --error-color: #fc758c;
+  --main-color: rgb(0, 186, 199);
+  --error-color: #ff0f37;
+  
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -157,6 +158,7 @@ img {
   position: relative;
   background: var(--second-bg-color);
   background: url(images/home-laptop.jpg);
+  background-attachment: fixed;
   background-size: contain;
   display: flex;
   flex-direction: column;
@@ -235,7 +237,9 @@ p.nsvp {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
+  background-color: #000000;
+
+
   filter: opacity(80%);
 }
 
@@ -463,13 +467,13 @@ section.little {
 .little span {
   font-size: 10rem;
   color: #0ef;
-  transition: color 0.5s ease;
+  transition: color 0.8s ease;
 }
 
 .little i:hover,
 .little span:hover {
   color: #a0f9ff;
-  text-shadow: 0 0 0.5rem #a0f9ff;
+  text-shadow: 0 0 0.5rem #90e1fa;
 }
 
 .little > div {
