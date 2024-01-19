@@ -44,3 +44,14 @@ ScrollReveal().reveal(".contact-form", { origin: "bottom" });
 // const nameInput = document.querySelector("#full-name");
 
 // nameInput.setCustomValidity("kindly input full name (3 letters min)");
+
+
+
+// typed js
+
+const typed = new Typed(".about-what-we-do", {
+  strings: ["We offer digital marketing services tailored for home improvement businesses. Through strategic advertising on top social media platforms, we generate high-quality leads ready for quotes. Our tailored approach allows you to dedicate more time to your core operations while ensuring that your business growth is fueled by our digital marketing expertise, resulting in your business's seamless and efficient growth."],
+  typeSpeed: 25,
+  loop: false,
+  showCursor: false,
+});

@@ -284,11 +284,17 @@ p.nsvp {
   font-size: 1.4rem;
 }
 
+.about-what-we-do-div {
+  min-width: 90vw;
+  min-height: 50px;
+}
+
+
 div.about {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
 }
 #about {
   background: var(--second-bg-color);
@@ -472,8 +478,10 @@ section.little {
 
 .little i:hover,
 .little span:hover {
-  color: #a0f9ff;
-  text-shadow: 0 0 0.5rem #90e1fa;
+  color: var(--text-color);
+  /* text-shadow: 0 0 0.5rem #90e1fa; */
+  text-shadow: 0 0 1rem var(--main-color);
+
 }
 
 .little > div {
