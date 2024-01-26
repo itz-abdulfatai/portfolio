@@ -1,0 +1,48 @@
+* {
+    list-style: none;
+
+}
+
+
+
+header {
+height: 210px;
+overflow: hidden;
+position: relative;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: red; */
+    z-index: 3;
+    padding: 4rem 6rem;
+    
+}
+
+.banner h1 {
+    font-size: 4rem;
+    color: var(--main-color);
+
+
+}
+
+div.black-cover {
+    position: absolute;
+    z-index: 2;
+    background: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: opacity(70%);
+
+
+}
+
+.banner p, ul li{
+    font-size: 1.5rem;
+}

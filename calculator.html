@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        :root {
+            --background-color: #b8c0d6;
+            --text-color: #061031;
+            --second-background: #8995b6;
+            --button-background: #4e64a8;
+        }
+
+        body {
+            background: var(--background-color);
+            max-height: 90vh;
+
+        }
+
+
+        .heading {
+            text-align: center;
+        }
+
+        div.calculator {
+            width: 30%;
+            max-width: 80vw;
+            min-width: 300px;
+            border: solid 1px var(--button-background);
+            height: 80vh;
+            margin: 5vh auto;
+            display: grid;
+            grid-template-rows: 2fr 8fr;
+            background-color: var(--second-background);
+
+        }
+
+        input.display {
+            box-shadow: inset 0 0 1rem 1rem var(--background-color);
+            text-align: right;
+            padding: 20px;
+        }
+
+
+
+        /* div.calculator > * {
+} */
+
+
+        div.buttons {
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+
+        }
+
+        /* div.buttons > * {
+} */
+
+        div.numbers {
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+
+        button.digits {
+            flex-basis: 33%;
+        }
+
+        div.operation {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        button.symbols {
+            flex-basis: 100%;
+        }
+
+        button {
+            color: var(--text-color);
+            background: var(--button-background);
+            font-weight: 900;
+
+        }
+
+        button:hover {
+            background: var(--background-color);
+        }
+
+.equal {
+    background: rgb(255, 145, 0);
+}
+
+.equal:hover {
+    background: lightgreen;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="heading">
+        <h1>calculator</h1>
+    <p>(only 2 expressions allowed)</p>
+    <p>by Abdulfatai Aliyu</p>
+
+
+    </div>
+    <div class="calculator">
+        <input class="display" value="0" >
+
+        <div class="buttons">
+            <div class="numbers">
+                <button class="digits" onclick="empty()">ON/OF</button>
+                <button class="digits" onclick="appendValue(1)">1</button>
+
+                <button class="digits" onclick="empty()">AC</button>
+                <button class="digits" onclick="appendValue(2)">2</button>
+                <button class="digits" onclick="appendValue(3)">3</button>
+                <button class="digits" onclick="appendValue(4)">4</button>
+                <button class="digits" onclick="appendValue(5)">5</button>
+                <button class="digits" onclick="appendValue(6)">6</button>
+                <button class="digits" onclick="appendValue(7)">7</button>
+                <button class="digits" onclick="appendValue(8)">8</button>
+                <button class="digits" onclick="appendValue(0)"  >0</button>
+                <button class="digits" onclick="appendValue(9)">9</button>
+            </div>
+            <div class="operation">
+                <button class="symbols" onclick="appendValue('+'); changeOperator('+')">+</button>
+                <button class="symbols" onclick="appendValue('-'); changeOperator('-')">-</button>
+                <button class="symbols" onclick="appendValue('*'); changeOperator('*')">X</button>
+                <button class="symbols" onclick="appendValue('/'); changeOperator('/')">/</button>
+                <button class="symbols equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const display = document.querySelector(".display");
+
+        function appendValue(number) {
+            display.value += number
+        };
+        function empty() {
+            display.value = 0;
+
+
+
+        }
+
+        let operator;
+
+        function changeOperator(Symbol) {
+            operator = Symbol;
+        }
+
+
+        function calculate() {
+            let calc = display.value.split(operator);
+            let result;
+            //    =  calc[0] - calc[1];
+
+            switch (operator) {
+                case "-":
+                    result = calc[0] - calc[1];
+                    break;
+
+                case "+":
+                    result = Number(calc[0]) + Number(calc[1]);
+                    break;
+
+                case "/":
+                    result = calc[0] / calc[1];
+                    break;
+
+                case "*":
+                    result = calc[0] * calc[1];
+                    break;
+
+
+            }
+
+
+
+
+            display.value = result;
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

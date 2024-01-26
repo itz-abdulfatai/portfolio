@@ -10,7 +10,6 @@ body {
   --text-color: #fff;
   --main-color: rgb(0, 186, 199);
   --error-color: #ff0f37;
-  
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -239,7 +238,6 @@ p.nsvp {
   bottom: 0;
   background-color: #000000;
 
-
   filter: opacity(80%);
 }
 
@@ -284,17 +282,14 @@ p.nsvp {
   font-size: 1.4rem;
 }
 
-.about-what-we-do-div {
-  min-width: 90vw;
-  min-height: 50px;
-}
 
 
 div.about {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: stretch;
+  align-items: center;
+  text-align: center;
 }
 #about {
   background: var(--second-bg-color);
@@ -481,7 +476,6 @@ section.little {
   color: var(--text-color);
   /* text-shadow: 0 0 0.5rem #90e1fa; */
   text-shadow: 0 0 1rem var(--main-color);
-
 }
 
 .little > div {
@@ -576,6 +570,8 @@ section.little {
 
   .hero {
     background: url(images/home-tab.jpg);
+
+    background-attachment: fixed;
     min-height: 80vh;
   }
 
@@ -691,8 +687,6 @@ section.little {
     font-size: 3rem;
   }
 
-
-
   .portfolio-container {
     grid-template-columns: 1fr;
   }
@@ -731,7 +725,7 @@ section.little {
 
 @media (max-width: 365px) {
   .hero {
-    /* background: url(images/home-mobile.jpg); */
+    background-attachment: fixed;
     min-height: 60hv;
   }
 

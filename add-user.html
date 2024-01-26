@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+</head>
+<body>
+
+    <h2>Signup Form</h2>
+    
+    <form id="signupForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+        
+        <button type="button" onclick="saveUser()">Sign Up</button>
+    </form>
+
+    <script>
+        function saveUser() {
+            // Get values from the form
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Check if the user already exists in local storage
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Check if the username or email is already taken
+            var isUserExists = users.some(function(user) {
+                return user.username === username || user.email === email;
+            });
+
+            if (isUserExists) {
+                alert('Username or email already exists. Please choose a different one.');
+                return;
+            }
+
+            // Save the new user
+            var newUser = {
+                username: username,
+                email: email,
+                password: password
+            };
+
+            users.push(newUser);
+
+            // Update the local storage
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('Signup successful! You can now login.');
+        }
+    </script>
+
+</body>
+</html>

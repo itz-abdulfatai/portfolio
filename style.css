@@ -19,10 +19,11 @@
 
 @media (prefers-color-scheme: dark) {
   body {
-    --bg-color: #1f242d;
-    --second-bg-color: #323946;
+    --bg-color: #13192b;
+    --second-bg-color: #222d42;
     --text-color: #fff;
-    --main-color: #0ef;
+    --main-color: rgb(0, 186, 199);
+    --error-color: #ff0f37;
   }
 }
 
@@ -44,6 +45,8 @@
 
 /* ==================== end of themed variables===================== */
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -53,6 +56,7 @@
   border: none;
   outline: none;
   scroll-behavior: smooth;
+  /* transition: background .2s ease; */
 }
 /* 
 :root {
@@ -501,12 +505,9 @@ span {
     padding: 2rem 3%;
   }
 
-  .floating {
-    
- 
-  }
+
 .themeIcon {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 
 
@@ -631,18 +632,38 @@ span {
   }
 }
 
+
+input {
+  transition: outline-color .4s ease;
+}
+
+input:focus {
+  outline-color: var(--text-color);
+  outline-offset: -1px;
+  outline-style: solid;
+  outline-width: thin;
+}
+
+
+input:invalid {
+  outline-color: rgb(253, 19, 58);
+}
+
+
+
 /*  theme checkbox */
 
 body.lighttheme {
-  --bg-color: #e2eaf3;
-  --second-bg-color: #ccdce9;
-  --text-color: #1f255e;
-  --main-color: #2f73fe;
+  --bg-color: #cfddec;
+  --second-bg-color: #b6cbdd;
+  --text-color: #00065b;
+  --main-color: #0e2eca;
 }
 
 body.darktheme {
-  --bg-color: #1f242d;
-  --second-bg-color: #323946;
+  --bg-color: #13192b;
+  --second-bg-color: #222d42;
   --text-color: #fff;
-  --main-color: #0ef;
+  --main-color: rgb(0, 186, 199);
+  --error-color: #ff0f37;
 }

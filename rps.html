@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rock paper scissors</title>
+
+<style>
+    button {
+        font-size: 3rem;
+        background: none;
+        border-radius: 3rem;
+        padding: 15px;
+        border: solid transparent;
+        cursor: pointer;
+        transition: transform .15s ease-in;
+    }
+
+    button:hover {
+        background: #cae6f0;
+        border: solid lightgreen;
+        transform: scale(1.1);
+
+    }
+
+    .result, .display {
+        margin-bottom: 20px;
+    }
+
+
+</style>
+
+  </head>
+
+  <body style="text-align: center">
+    <h1>rock paper scissors</h1>
+    <div class="display">chose to know computer choice</div>
+<div class="result">tap one to play</div>
+    <button onclick="play('rock')" >🪨</button>
+    <button onclick="play('paper')" >📜</button>
+    <button onclick="play('scissors')" >✂️</button>
+
+
+    <script>
+        function play(hand) {
+            const computerChoices = ["rock", "paper", "scissors"];
+            const random = Math.floor(Math.random()* computerChoices.length);
+            // console.log("your choice is " + hand);
+            const display = document.querySelector(".display")
+            display.innerHTML = "computer choice is " + computerChoices[random];
+            
+            const result = document.querySelector(".result")
+            
+
+
+            if (hand == computerChoices[random]) {
+                result.innerHTML = "it is a draw";
+            } else if (hand == "rock" && computerChoices[random] == "scissors" ) {
+                result.innerHTML = "you win";
+            }  else if (hand == "paper" && computerChoices[random] == "rock" ) {
+                result.innerHTML = "you win";
+            }  else if (hand == "scissors" && computerChoices[random] == "paper" ) {
+                result.innerHTML = "you win";
+            }  else {
+                result.innerHTML = "you loose"
+            }
+
+        }
+
+// paper - rock
+// rock - scissors
+// scissors - paper
+// paper - rock
+
+
+    </script>
+  </body>
+</html>
