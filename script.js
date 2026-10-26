@@ -37,7 +37,7 @@ ScrollReveal({ distance: "60px", duration: 1500, delay: 150 });
 
 ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
 ScrollReveal().reveal(
-  ".home-img, .cards-container, .timeline-item, .contact form, .contact-info",
+  ".home-img, .cards-container, .brand-card, .timeline-item, .contact-card, .location",
   { origin: "bottom", interval: 100 }
 );
 ScrollReveal().reveal(".about-img", { origin: "left" });
